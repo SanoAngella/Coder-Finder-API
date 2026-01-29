@@ -7,10 +7,23 @@ router.get('/coders', function(req, res, next) {
     // Coder.find({}).then(function(coders) {
     //     res.send(coders);
     // }).catch(next);
+    const lng = parseFloat(req.query.lng);
+    const lat = parseFloat(req.query.lat);
 
-    Ninja.geoNear(
-        {type: 'Point', coordinates: [parseFloat(req.query.lng), parseFloat(req.query.lat)]}
-    )
+    if (isNaN(lng) || isNaN(lat)) {
+        return res.status(400).send({ error: "Please provide lng and lat in the URL" });
+    } 
+
+    Coder.aggreggate([
+    {
+        $geoNear: {
+            near: { type: 'Point', coordinates: [lng,  lat] },
+            distanceField: "dist.calculated",
+            maxDistance: 20000,
+            spherical: true
+        }
+    }
+])
 });
 
 // Add a new Coder
