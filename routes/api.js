@@ -33,3 +33,4 @@ const CoderSchema = new Schema({
 
 });
 const Coder= mongoose.model('coder', CoderSchema);
+module.exports = Coder;
