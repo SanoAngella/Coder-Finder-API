@@ -28,12 +28,50 @@ h1.title {
     margin-bottom: 40px;
 }
 
-/* Styles for the individual coder list items */
+/* --- SEARCH FORM FIXES --- */
+
+/* Changed from flex to block to allow labels to sit on top of inputs */
+#search {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#search label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #777;
+}
+
+#search input[type="text"] {
+    display: block;
+    width: 100%; /* Makes input fill the container */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Prevents padding from breaking width */
+}
+
+#search input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #009dff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --- LIST STYLES --- */
+
 #coders {
     list-style-type: none;
     padding: 0;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 40px auto;
 }
 
 #coders li {
@@ -42,23 +80,17 @@ h1.title {
     position: relative;
 }
 
-#coders li:last-child {
-    border: 0;
-}
-
-#coders span {
-    display: block;
-}
-
 #coders span.name {
     font-weight: bold;
     font-size: 20px;
     color: #444;
+    display: block;
 }
 
 #coders span.rank {
     text-transform: capitalize;
     color: #999;
+    display: block;
 }
 
 #coders span.dist {
@@ -69,27 +101,21 @@ h1.title {
     color: #ccc;
 }
 
-/* Search bar styles */
-form {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
+/* --- AVAILABILITY DOTS --- */
+
+/* These target the span with className="available" or "unavailable" */
+#coders span.available, #coders span.unavailable {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
-    width: 200px;
+#coders span.available {
+    background: #2ecc71; /* Green */
 }
 
-input[type="submit"] {
-    padding: 10px 20px;
-    font-size: 16px;
-    background: #ff4a00;
-    color: #fff;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
+#coders span.unavailable {
+    background: #11172a; 
 }
