@@ -1,0 +1,121 @@
+body {
+    background: #dfdfdf;
+    font-family: 'Cutive Mono', monospace;
+    margin: 0;
+}
+
+h1.title {
+    font-size: 40px;
+    color: #4a4a4a;
+    text-align: center;
+    padding: 60px 0;
+    margin: 0;
+}
+
+#home {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+#home h1 {
+    font-size: 24px;
+    color: #009dff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- SEARCH FORM FIXES --- */
+
+/* Changed from flex to block to allow labels to sit on top of inputs */
+#search {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#search label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #777;
+}
+
+#search input[type="text"] {
+    display: block;
+    width: 100%; /* Makes input fill the container */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Prevents padding from breaking width */
+}
+
+#search input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #009dff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --- LIST STYLES --- */
+
+#coders {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+#coders li {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+#coders span.name {
+    font-weight: bold;
+    font-size: 20px;
+    color: #444;
+    display: block;
+}
+
+#coders span.rank {
+    text-transform: capitalize;
+    color: #999;
+    display: block;
+}
+
+#coders span.dist {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* --- AVAILABILITY DOTS --- */
+
+/* These target the span with className="available" or "unavailable" */
+#coders span.available, #coders span.unavailable {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#coders span.available {
+    background: #2ecc71; /* Green */
+}
+
+#coders span.unavailable {
+    background: #11172a; 
+}
