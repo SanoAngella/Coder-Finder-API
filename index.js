@@ -9,22 +9,16 @@ const app = express();
 mongoose.connect('mongodb://localhost/Coder-Blooded');
 mongoose.Promise = global.Promise;
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> a787be6a345f3599ee144b82f28df162602d5b22
 mongoose.connection.once('open', function(){
    console.log('Connection has been made')
 }).on('error', function(error){
    console.log('Connection error:', error)
 })
 
-<<<<<<< HEAD
 app.use(express.static('public')); 
 
-=======
->>>>>>> a787be6a345f3599ee144b82f28df162602d5b22
+
 app.use(bodyParser.json());
 
 // initialize the routes 
